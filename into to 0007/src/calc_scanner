@@ -1,0 +1,55 @@
+import java.util.Scanner;
+
+public class Calc {
+    public static void main(String[] args){
+        //vars to do calc on
+        int num1;
+        int num2;
+        int num3;
+        int num4;
+        int num5;
+        int num6;
+        double num7;
+        double num8;
+        double quotient;
+        int sum;
+        int difference;
+        int product;
+
+        Scanner sc=new Scanner(System.in);
+
+        //get the two numbers to add
+        System.out.println("What is the number you wish to add?");
+        num1=sc.nextInt();
+        System.out.println("What is the second number you wish to add?");
+        num2=sc.nextInt();
+        sum=num1+num2;
+        System.out.println("The sum of " +num1+" and "+num2+ " is " +sum);
+
+        //get two numbers to subtract
+        System.out.println("What is the first number you wish to subtract?");
+        num3=sc.nextInt();
+        System.out.println("What is the second number you wish to subtract?");
+        num4=sc.nextInt();
+        difference=num3-num4;
+        System.out.println("The difference of " +num3+" and "+num4+ " is " +difference);
+
+        //get two numbers to multiply
+        System.out.println("What is the first number you wish to multiply?");
+        num5=sc.nextInt();
+        System.out.println("What is the second number you wish to multiply?");
+        num6=sc.nextInt();
+        product=num5*num6;
+        System.out.println("The product of " +num5+" and "+ num6+ " is " +product);
+
+        //get numbers to divide
+        System.out.println("What is the first number you wish to divide?");
+        num7=sc.nextDouble();
+        System.out.println("What is the second number you wish to divide?");
+        num8=sc.nextDouble();
+        quotient=num7/num8;
+        System.out.println("The quotient of " +num7+" and "+num8+" is " +quotient);
+
+
+    }
+}
