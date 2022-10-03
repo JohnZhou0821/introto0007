@@ -1,0 +1,55 @@
+import java.util.*;
+
+public class madlib {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        String name; //what is your name
+        int age; //how old are you
+        String Class; //which class
+        int ClassTime; //when is class
+        String dayNight; //am or pm
+        String date; //which days
+        String feeling; //how do you feel
+        double time; //how long do you spend on class
+        float grade; //what grade are you trying to get
+        String ide; //ide or terminal
+        String semester; //feel about semester
+        
+        System.out.println("What is your name?");
+        name = sc.next();
+        
+        System.out.println("How old are you in years?");
+        age = sc.nextInt();
+        
+        System.out.println("Which class is this? No spaces and numbers, use capital for each new word");
+        Class = sc.next();
+        
+        System.out.println("What time does this class start? Number only");
+        ClassTime = sc.nextInt();
+        
+        System.out.println("Am or Pm?");
+        dayNight = sc.next();
+        
+        System.out.println("What days do you have this class? No spaces and only enter the first letter of day");
+        date = sc.next();
+        
+        System.out.println("How do you feel about this class in one word?");
+        feeling = sc.next();
+        
+        System.out.println("How many hours do you spend on this class?");
+        time = sc.nextDouble();
+        
+        System.out.println("What number grade are you hoping to achieve in this course?");
+        grade = sc.nextFloat();
+        
+        System.out.println("Do you use an IDE or terminal? If IDE, identify which one.");
+        ide = sc.next();
+        
+        System.out.println("In one word, how do you feel about this semester?");
+        semester = sc.next();
+        
+        System.out.println("My name is " + name + ". I am " + age + " years old. This class is " + Class + " which starts at " + ClassTime + dayNight + " on " + date + ". I spend " + time + " hours on this class. I feel very " + feeling + " about this class and I am hoping to get a " + grade + " in this class. For coding, I prefer " + ide + ". I feel very " + semester + " about this semester.");
+    }
+}
