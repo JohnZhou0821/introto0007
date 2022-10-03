@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Wardrobe {
+    public static void main(String[] args) {
+        double temperature;
+        String fname;
+        Scanner sc=new Scanner(System.in);
+        System.out.println("What is your name?");
+        fname=sc.next();
+        System.out.println("Hello "+fname+", Will you please put in the temp?");
+        temperature=sc.nextDouble();
+        boolean precip=true;
+        boolean pantsShorts=temperature>65;
+        boolean shirtShortLong= temperature>65;
+        boolean coat=30>=temperature && temperature>10;
+        boolean lightJacket= temperature>50 && temperature<71;
+        boolean shoes=!precip;
+        boolean boots=precip;
+        System.out.println(fname+", You will be wearing pants or shorts, will it be shorts? " +pantsShorts);
+        System.out.println("You will be wearing short sleeve or long sleeve shirts, will it be short sleeve? " +shirtShortLong);
+        System.out.println("Will you need your coat "+fname+"?"+coat);
+        System.out.println("Jacket? "+lightJacket);
+        System.out.println("Will you need your boots today? "+boots);
+        System.out.println("Will you need just your shoes today? "+shoes);
+    }
+}
