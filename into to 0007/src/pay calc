@@ -1,0 +1,55 @@
+import java.util.*;
+
+public class pay {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        //enter total hours
+        double hours;
+        double hourlyRate;
+        double salBefTax; //salary before tax
+        double salAftTax; //salary after tax
+        double finalPay; //final pay
+
+        System.out.println("Hours worked: ");
+        hours = sc.nextDouble();
+
+        System.out.println("Hourly rate: ");
+        hourlyRate = sc.nextDouble();
+
+        if (hours <= 40) {
+            salBefTax = hours * hourlyRate;
+            System.out.println("Your salary before tax is " + salBefTax);
+            salAftTax = salBefTax - (salBefTax * 0.031 * 0.03);
+            if (salAftTax < 100000) {
+                finalPay = salAftTax - (salAftTax * 0.2);
+                System.out.println("Pay: " + finalPay);
+            }
+                if (salAftTax >= 100000 && salAftTax <= 200000) {
+                    finalPay = salAftTax - (salAftTax * 0.3);
+                    System.out.println("Pay: " + finalPay);
+                }
+                    if (salAftTax > 200000) {
+                        finalPay = salAftTax - (salAftTax * 0.5);
+                        System.out.println("Pay: " + finalPay);
+                    }
+                }
+
+        if (hours > 40) {
+            salBefTax = (40 * hourlyRate) + ((hours - 40) * (hourlyRate * 1.5));
+            System.out.println("Your salary before tax is " + salBefTax);
+            salAftTax = salBefTax - (salBefTax * 0.031 * 0.03);
+            if (salAftTax < 100000) {
+                finalPay = salAftTax - (salAftTax * 0.2);
+                System.out.println("Pay: " + finalPay);
+            }
+                if (salAftTax >= 100000 && salAftTax <= 200000) {
+                    finalPay = salAftTax - (salAftTax * 0.3);
+                    System.out.println("Pay: " + finalPay);
+                }
+                    if (salAftTax > 200000) {
+                        finalPay = salAftTax - (salAftTax * 0.5);
+                        System.out.println("Pay: " + finalPay);
+                    }
+                    }
+            }
+        }
