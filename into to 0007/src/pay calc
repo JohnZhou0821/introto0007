@@ -8,6 +8,7 @@ public class pay {
         double hourlyRate;
         double salBefTax; //salary before tax
         double salAftTax; //salary after tax
+        double payDed; //pay deducted
         double finalPay; //final pay
 
         System.out.println("Hours worked: ");
@@ -22,17 +23,23 @@ public class pay {
             salAftTax = salBefTax - (salBefTax * 0.031 * 0.03);
             if (salAftTax < 100000) {
                 finalPay = salAftTax - (salAftTax * 0.2);
+                payDed=salBefTax-finalPay;
+                System.out.println("Total deducted: "+payDed);
                 System.out.println("Pay: " + finalPay);
             }
-                if (salAftTax >= 100000 && salAftTax <= 200000) {
-                    finalPay = salAftTax - (salAftTax * 0.3);
-                    System.out.println("Pay: " + finalPay);
-                }
-                    if (salAftTax > 200000) {
-                        finalPay = salAftTax - (salAftTax * 0.5);
-                        System.out.println("Pay: " + finalPay);
-                    }
-                }
+            if (salAftTax >= 100000 && salAftTax <= 200000) {
+                finalPay = salAftTax - (salAftTax * 0.3);
+                payDed=salBefTax-finalPay;
+                System.out.println("Total deducted: "+payDed);
+                System.out.println("Pay: " + finalPay);
+            }
+            if (salAftTax > 200000) {
+                finalPay = salAftTax - (salAftTax * 0.5);
+                payDed=salBefTax-finalPay;
+                System.out.println("Total deducted: "+payDed);
+                System.out.println("Pay: " + finalPay);
+            }
+        }
 
         if (hours > 40) {
             salBefTax = (40 * hourlyRate) + ((hours - 40) * (hourlyRate * 1.5));
@@ -40,16 +47,22 @@ public class pay {
             salAftTax = salBefTax - (salBefTax * 0.031 * 0.03);
             if (salAftTax < 100000) {
                 finalPay = salAftTax - (salAftTax * 0.2);
+                payDed=salBefTax-finalPay;
+                System.out.println("Total deducted: "+payDed);
                 System.out.println("Pay: " + finalPay);
             }
-                if (salAftTax >= 100000 && salAftTax <= 200000) {
-                    finalPay = salAftTax - (salAftTax * 0.3);
-                    System.out.println("Pay: " + finalPay);
-                }
-                    if (salAftTax > 200000) {
-                        finalPay = salAftTax - (salAftTax * 0.5);
-                        System.out.println("Pay: " + finalPay);
-                    }
-                    }
+            if (salAftTax >= 100000 && salAftTax <= 200000) {
+                finalPay = salAftTax - (salAftTax * 0.3);
+                payDed=salBefTax-finalPay;
+                System.out.println("Total deducted: "+payDed);
+                System.out.println("Pay: " + finalPay);
+            }
+            if (salAftTax > 200000) {
+                finalPay = salAftTax - (salAftTax * 0.5);
+                payDed=salBefTax-finalPay;
+                System.out.println("Total deducted: "+payDed);
+                System.out.println("Pay: " + finalPay);
             }
         }
+    }
+}
