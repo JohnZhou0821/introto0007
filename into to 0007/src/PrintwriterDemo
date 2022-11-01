@@ -1,0 +1,31 @@
+import java.util.*;
+import java.io.*;
+public class PrintwriterDemo {
+    public static void main(String[] args) throws IOException {
+        String nameoffile;
+        double testscore;
+        String studentname;
+        int numofenters;
+
+        Scanner scn = new Scanner(System.in);
+        System.out.println("Please enter file name");
+        nameoffile = scn.next();
+        System.out.println("Please enter numbers of scores to enter");
+        numofenters = scn.nextInt();
+
+        FileWriter fwriter= new FileWriter("Documents"+nameoffile+".txt", true);
+        PrintWriter outputFile=new PrintWriter(fwriter);
+        for (int i=1; i<=numofenters; i++) { //i=0; i<numofenters
+            System.out.println("Please enter student last name");
+            studentname = scn.next();
+
+            System.out.println("Please enter student test score");
+            testscore = scn.nextDouble();
+
+            outputFile.println(studentname);
+            outputFile.println(testscore);
+        }
+            outputFile.close();
+            System.out.println("File written");
+    }
+}
