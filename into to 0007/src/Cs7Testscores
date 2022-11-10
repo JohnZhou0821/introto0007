@@ -1,0 +1,69 @@
+import java.util.*;
+import java.io.*;
+
+public class Cs7Testscores {
+    public static void main(String[] args) throws IOException {
+        //Test scores for CS7 class
+        //ask user if they want to add scores
+        Scanner scn=new Scanner(System.in);
+        System.out.println("Do you want to enter students scores? Please enter YES or NO only!!!");
+        String enter=scn.next();
+        while (!enter.equals("YES") && !enter.equals("NO")) {
+            System.out.println("I SAID YES OR NO PLEASE!");
+            enter=scn.next();
+        }
+        if (enter.equals("YES")) {
+            postscores();
+        }
+        //ask them to find average scores
+        System.out.println("Do you want to find class average? PLease YES or NO only!");
+        String enter2=scn.next();
+        while (!enter2.equals("YES") && !enter2.equals("NO")) {
+            System.out.println("I SAID YES OR NO PLEASE!");
+            enter2 = scn.next();
+        }
+    }
+
+    public static void postgrades() throws IOException{
+        //post student grades
+        String yesno;
+        Scanner scn=new Scanner(System.in);
+        System.out.println("please enter the file name");
+        String file_name=scn.next();
+
+        FileWriter outputFile=new FileWriter(file_name);
+        PrintWriter outFile2=new PrintWriter(outputFile);
+
+        do {
+            System.out.println("Please enter student's first name");
+            String f_name=scn.next();
+
+            System.out.println("please enter test score 1-100");
+            int age=scn.nextInt();
+            
+        }
+    }
+
+    public static void findaverage() throws IOException {
+        //read the scores from files and calc aver
+        Scanner scn=new Scanner(System.in);
+        System.out.println("Please enter the EXACT file name including .txt");
+        String nameoffile=scn.nextLine();
+
+        File file = new File(nameoffile);
+        int numofStudents =0;
+        double totalscores =0;
+        String name="";
+
+        while (inputFile.hasNext()){
+            name =inputFile.next();
+            double scores = inputFile.nextInt();
+            
+
+        }
+    }
+    public static void findlow() {
+
+    }
+
+}
