@@ -22,6 +22,38 @@ public class Cs7Testscores {
             System.out.println("I SAID YES OR NO PLEASE!");
             enter2 = scn.next();
         }
+        if (enter2.equals("YES")){
+            findaverage();
+        }
+    }
+
+    public static void postscores() throws IOException {
+        String yesno;
+        Scanner scn=new Scanner(System.in);
+        System.out.println("please enter the file name");
+        String file_name=scn.next();
+        
+        FileWriter outputFile = new FileWriter(file_name);
+        PrintWriter outFile2=new PrintWriter(outputFile);
+        
+        do {
+            System.out.println("please enter student's first name");
+            String f_name =scn.next();
+            
+            outFile2.println(f_name);
+            
+            System.out.println("please enter test score 1-100");
+            int age= scn.nextInt();
+            
+            outFile2.println(age);
+            
+            System.out.println("Add more? yes or no?");
+            yesno=scn.next();
+        }
+        while (yesno.equals("yes")||yesno.equals("YES")||yesno.equals("Yes")); {
+            outFile2.close();
+            System.out.println("data written");
+        }
     }
 
     public static void postgrades() throws IOException{
@@ -38,10 +70,21 @@ public class Cs7Testscores {
             System.out.println("Please enter student's first name");
             String f_name=scn.next();
 
+            outFile2.println(f_name);
+
             System.out.println("please enter test score 1-100");
             int age=scn.nextInt();
-            
+
+            outFile2.println(age);
+
+            System.out.println("Add more? yes or no?");
+            yesno=scn.next();
         }
+        while (yesno.equals("yes")||yesno.equals("YES")||yesno.equals("Yes"));
+        
+        outFile2.close();
+        
+        System.out.println("data written");
     }
 
     public static void findaverage() throws IOException {
@@ -51,6 +94,7 @@ public class Cs7Testscores {
         String nameoffile=scn.nextLine();
 
         File file = new File(nameoffile);
+        Scanner inputFile= new Scanner(file);
         int numofStudents =0;
         double totalscores =0;
         String name="";
@@ -58,12 +102,23 @@ public class Cs7Testscores {
         while (inputFile.hasNext()){
             name =inputFile.next();
             double scores = inputFile.nextInt();
-            
+            numofStudents+=1;
+            totalscores+= scores;
+            System.out.println("The score for " +name+" is "+scores);
 
         }
+        inputFile.close();
+        System.out.println("");
+        System.out.println("");
+        System.out.println("The class average is "+totalscores/numofStudents);
     }
-    public static void findlow() {
 
+    public static void findhigh() {
+        //post students grades
+    }
+    
+    public static void findlow() {
+        //post students grades
     }
 
 }
