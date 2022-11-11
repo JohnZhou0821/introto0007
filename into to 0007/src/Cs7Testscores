@@ -5,25 +5,45 @@ public class Cs7Testscores {
     public static void main(String[] args) throws IOException {
         //Test scores for CS7 class
         //ask user if they want to add scores
-        Scanner scn=new Scanner(System.in);
+        Scanner scn = new Scanner(System.in);
         System.out.println("Do you want to enter students scores? Please enter YES or NO only!!!");
-        String enter=scn.next();
+        String enter = scn.next();
         while (!enter.equals("YES") && !enter.equals("NO")) {
             System.out.println("I SAID YES OR NO PLEASE!");
-            enter=scn.next();
+            enter = scn.next();
         }
         if (enter.equals("YES")) {
             postscores();
         }
         //ask them to find average scores
-        System.out.println("Do you want to find class average? PLease YES or NO only!");
-        String enter2=scn.next();
+        System.out.println("Do you want to find class average? Please YES or NO only!");
+        String enter2 = scn.next();
         while (!enter2.equals("YES") && !enter2.equals("NO")) {
             System.out.println("I SAID YES OR NO PLEASE!");
             enter2 = scn.next();
         }
-        if (enter2.equals("YES")){
+        if (enter2.equals("YES")) {
             findaverage();
+        }
+        //ask them to find high
+        System.out.println("Do you want to find class high? Please YES or NO only!");
+        String enter3 = scn.next();
+        while (!enter3.equals("YES") && !enter3.equals("NO")) {
+            System.out.println("I SAID YES OR NO PLEASE!");
+            enter3 = scn.next();
+        }
+        if (enter3.equals("YES")) {
+            findhigh();
+        }
+        //as them to find low
+        System.out.println("Do you want to find class low? Please YES or NO only!");
+        String enter4 = scn.next();
+        while (!enter4.equals("YES") && !enter4.equals("NO")) {
+            System.out.println("I SAID YES OR NO PLEASE!");
+            enter3 = scn.next();
+        }
+        if (enter4.equals("YES")) {
+            findlow();
         }
     }
 
@@ -32,21 +52,21 @@ public class Cs7Testscores {
         Scanner scn=new Scanner(System.in);
         System.out.println("please enter the file name");
         String file_name=scn.next();
-        
+
         FileWriter outputFile = new FileWriter(file_name);
         PrintWriter outFile2=new PrintWriter(outputFile);
-        
+
         do {
             System.out.println("please enter student's first name");
             String f_name =scn.next();
-            
+
             outFile2.println(f_name);
-            
+
             System.out.println("please enter test score 1-100");
             int age= scn.nextInt();
-            
+
             outFile2.println(age);
-            
+
             System.out.println("Add more? yes or no?");
             yesno=scn.next();
         }
@@ -81,16 +101,16 @@ public class Cs7Testscores {
             yesno=scn.next();
         }
         while (yesno.equals("yes")||yesno.equals("YES")||yesno.equals("Yes"));
-        
+
         outFile2.close();
-        
+
         System.out.println("data written");
     }
 
     public static void findaverage() throws IOException {
         //read the scores from files and calc aver
         Scanner scn=new Scanner(System.in);
-        System.out.println("Please enter the EXACT file name including .txt");
+        System.out.println("Please enter the file name");
         String nameoffile=scn.nextLine();
 
         File file = new File(nameoffile);
@@ -113,11 +133,11 @@ public class Cs7Testscores {
         System.out.println("The class average is "+totalscores/numofStudents);
     }
 
-    public static void findhigh() {
+    public static void findhigh() throws IOException {
         //post students grades
     }
-    
-    public static void findlow() {
+
+    public static void findlow() throws IOException {
         //post students grades
     }
 
