@@ -72,12 +72,12 @@ public class Scores {
                 System.out.println("Yes or No please");
                 yesno=scn.next();
             }
+            
         }
-
         while (yesno.equalsIgnoreCase("Yes")); {
             outFile.close();
             System.out.println("Data written");
-        }
+        }    
     }
 
     public static void findaverage() throws IOException{
@@ -92,10 +92,12 @@ public class Scores {
      double totalscores =0;
      String name="";
      String yesno;
-
+     //System.out.println("Find average - right before while loop");
      while (inputFile.hasNext()){
          name =inputFile.next();
-         double scores = inputFile.nextInt();
+         System.out.println("Name: " + name);
+         double scores = inputFile.nextDouble();
+         System.out.println(name + "'s score is: " + scores);
          numofStudents+=1;
          totalscores+= scores;
          System.out.println("The score for " +name+" is "+scores);
@@ -106,15 +108,6 @@ public class Scores {
      System.out.println("");
      System.out.println("The class average is "+totalscores/numofStudents);
      System.out.println("");
-         System.out.println("Add more scores? yes or no?");
-         yesno=scn.next();
-         while (!yesno.equalsIgnoreCase("yes")&&!yesno.equalsIgnoreCase("no")){
-            System.out.println("Yes or No please");
-            yesno=scn.next();
-        }
-         if(yesno.equalsIgnoreCase("yes")){
-            postscores();
-         }
     }
 
     public static void findhigh() throws IOException{
@@ -125,17 +118,13 @@ public class Scores {
  
          File file = new File(nameoffile);
          Scanner inputFile= new Scanner(file);
-         int numofStudents=0;
-         double totalscores =0;
          String name="";
          double max=Integer.MIN_VALUE;
          String yesno;
  
          while (inputFile.hasNext()){
              name =inputFile.next();
-             double scores = inputFile.nextInt();
-             numofStudents+=1;
-             totalscores+= scores;
+             double scores = inputFile.nextDouble();
              System.out.println("The score for " +name+" is "+scores);
              
              if(scores>max){
@@ -146,17 +135,6 @@ public class Scores {
          System.out.println("");
          System.out.println("");
          System.out.println("The biggest number in the file is "+max);
-
-         System.out.println("Add more? yes or no?");
-         yesno=scn.next();
-         while (!yesno.equalsIgnoreCase("yes")&&!yesno.equalsIgnoreCase("no")){
-            System.out.println("Yes or No please");
-            yesno=scn.next();
-        }
-         if(yesno.equalsIgnoreCase("yes")){
-            postscores();
-         }
-
      }
         
       
@@ -169,17 +147,13 @@ public class Scores {
 
         File file = new File(nameoffile);
         Scanner inputFile= new Scanner(file);
-        int numofStudents =0;
-        double totalscores =0;
         String name="";
         double min=Integer.MAX_VALUE;
         String yesno;
 
         while (inputFile.hasNext()){
             name =inputFile.next();
-            double scores = inputFile.nextInt();
-            numofStudents+=1;
-            totalscores+= scores;
+            double scores = inputFile.nextDouble();
             System.out.println("The score for " +name+" is "+scores);
             if(scores<min){
                min=scores;
@@ -188,18 +162,6 @@ public class Scores {
         inputFile.close();
         System.out.println("");
         System.out.println("");
-        System.out.println("The biggest number in the file is "+min);
-        
-        System.out.println("Add more? yes or no?");
-         yesno=scn.next();
-         while (!yesno.equalsIgnoreCase("yes")&&!yesno.equalsIgnoreCase("no")){
-            System.out.println("Yes or No please");
-            yesno=scn.next();
-        }
-         if(yesno.equals("yes")){
-            postscores();
+        System.out.println("The smallest number in the file is "+min);
          }
-
     }
-    }
-
